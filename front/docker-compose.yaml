@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+  dashboard:
+    driver: bridge
+
+services:
+  front:
+      container_name: front
+      build: .
+      restart: always
+      volumes:
+      - ./src:/app/src
+      ports:
+        - 8282:8282
+      networks:
+        - dashboard
+      environment:
+        - WATCHPACK_POLLING=true

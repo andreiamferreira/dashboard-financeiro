@@ -1,0 +1,31 @@
+
+table {
+    border-collapse: separate; 
+    border-spacing:0 15px;
+
+}
+
+th,
+td {
+  width: 200px;
+  text-align: center;
+  border: none;
+  padding: 45px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+
+th:first-child,
+td:first-child {
+    border-left: 1px solid black;
+}
+
+th:last-child,
+td:last-child {
+    border-right: 1px solid black;
+}
+
+EditIcon {
+    cursor: pointer;
+}
