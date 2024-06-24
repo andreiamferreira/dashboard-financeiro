@@ -1,0 +1,42 @@
+version: '3'
+
+networks:
+  dashboard:
+    driver: bridge
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_dashboard
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_dashboard
+    
+    ports:
+      - 3306:3306
+    networks:
+      - dashboard
+
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+ 
+  spring:
+    container_name: backend-dashboard
+    depends_on:
+      - mysql
+    build: 
+      context: .
+    restart: always
+    # volumes:
+    #   - ./src:/src/app
+    ports:
+      - 8080:8080
+    networks:
+      - dashboard
+   
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_dashboard
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
