@@ -21,11 +21,11 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("Dashboard API")
                         .description(
-                                "Dashboard para controle financeiro construído durante a primeira fase do programa GoTech, uma parceira Zallpy/Unicred")
+                                "Dashboard para controle financeiro")
                         .version("v1.0.0")
                         .contact(new Contact()
-                                .email("andreia.ferreira@zallpy.com")
-                                .url("https://git.zallpylabs.com/andreia.ferreira/dashboard-financeiro-projeto-final")));
+                                .email("ferreiramartinsandreia@gmail.com")
+                                ));
 
     }
 
